@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html>
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/libs/jquery-1.12.0.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/libs/angular.js"></script>
+  <script src="js/libs/angular-route.js"></script>
+  <script src="js/ng-controller/taaftController.js"></script>
+  <script src="js/ng-controller/taaftRouting.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-app="taaftApp">
+    <div class="container" ng-controller="homeScreenController">  
+      
+        <div class="row col-lg-12">
+                        <nav class="navbar navbar-default col-lg-12">
+                <div class="container-fluid">
+                  <div id="navbar">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+              </nav>
+              
+            <input class="col-lg-12" type="search" ng-model="searchItem" placeholder="What are you looking for?" id="search" style="display: inline;">
+            
+            <table class="table">
+        <thead>
+            <tr>
+	      <th>Sl No</th>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Price in $</th>
+              <th>Quantity in Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in availableItemList | filter: searchItem">
+              <td>{{$index+1}}</td>
+              <td><a href="#" ng-click="displayClickedItem('ItemId','{{item.itemId}}');">{{item.itemId}}</a></td>
+              <td><a href="#" ng-click="displayClickedItem('ItemName','{{item.itemName}}');">{{item.itemName}}</a></td>
+              <td>{{item.itemPrice}}</td>
+              <td>{{item.qtyAvailable}}</td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        
+        
+    </div>
+</body>
+
+</html>

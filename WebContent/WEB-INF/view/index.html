@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html>
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/libs/jquery-1.12.0.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/libs/angular.js"></script>
+  <script src="js/libs/angular-route.js"></script>
+  <script src="js/ng-controller/taaftController.js"></script>
+  <script src="js/ng-controller/taaftRouting.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-app="taaftApp">
+    <div class="container" ng-controller="loginController">
+        <div class="row col-lg-12">
+                <nav class="navbar navbar-default col-lg-12">
+                <div class="container-fluid">
+                  <div id="navbar">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+              </nav>
+            <div class="panel panel-login panel-login-custom">
+                <div class="col-lg-12 no-padding">
+                <form class="login">
+                    <p class="title">Log in</p>
+                    <input type="text" autofocus="" placeholder="Username" ng-model="userName" required>
+                    <i class="fa fa-user"></i>
+                    <input type="password" placeholder="Password" ng-model="password" required>
+                    <i class="fa fa-key"></i>
+                    <a href="#">Forgot your password?</a>
+                    <button>
+                      <i class="spinner"></i>
+                      <span class="state" ng-click="loginValidate()">Log in</span>
+                    </button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
